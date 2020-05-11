@@ -1,0 +1,67 @@
+.slider {
+    position: relative;
+    
+    &__arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 75px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+
+        @include hover {
+            svg {
+                transform: scale(1.3);
+            }
+        }
+
+        &--left {
+            left: 0;
+            svg {
+                transform: rotate(180deg);
+            }
+            @include hover {
+                svg {
+                    transform: rotate(180deg) scale(1.3);
+                }
+            }
+        }
+
+        &--right {
+            right: 0;
+        }
+
+        svg {
+            fill: $brand-color;
+            @include tr();
+        }
+
+    }
+    &__dots {
+        padding: 30px;
+        margin: 0;
+        text-align: center;
+        li {
+            display: inline-block;
+        }
+    }
+    &__dot {
+        display: inline-block;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        border: 1px solid transparent;
+        background-color: $brand-color;
+
+        &--active {
+            border-color: $brand-color;
+            background-color: transparent;
+        }
+
+        @include hover {
+            border-color: $brand-color;
+            background-color: transparent;
+        }
+    }
+}
